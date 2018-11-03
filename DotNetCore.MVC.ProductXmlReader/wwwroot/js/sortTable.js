@@ -6,10 +6,11 @@ $(document).ready(function () {
             if (aData[1] > 3)
                 $(nRow).css('background-color', 'red');
         },
-        "bPaginate": false,
+        "bPaginate": true,
         "bLengthChange": false,
         "bFilter": false,
         "bInfo": false,
         "bAutoWidth": false
     });
+    table.page.len(5).draw();
 });
