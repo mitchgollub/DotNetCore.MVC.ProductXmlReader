@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $.fn.dataTable.defaults.column.asSorting = ['asc'];
     var table = $('#table').DataTable({
         "order": [[0, "asc"]],
         "fnRowCallback": function (nRow, aData, ) {
