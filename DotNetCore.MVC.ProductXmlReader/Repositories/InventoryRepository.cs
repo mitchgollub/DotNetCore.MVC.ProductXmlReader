@@ -4,9 +4,9 @@ using System.Xml.Serialization;
 
 namespace DotNetCore.MVC.ProductXmlReader.Repositories
 {
-    public class InventoryRepository
+    public class InventoryRepository : IInventoryRepository
     {
-        private readonly string InventoryXmlFilePath = @"../Data/inventory.xml";
+        private readonly string InventoryXmlFilePath = @"Data/inventory.xml";
 
         public InventoryRepository()
         {
