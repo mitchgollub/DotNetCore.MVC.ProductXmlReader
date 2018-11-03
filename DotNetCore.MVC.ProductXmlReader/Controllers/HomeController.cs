@@ -2,6 +2,7 @@
 using DotNetCore.MVC.ProductXmlReader.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Linq;
 
 namespace DotNetCore.MVC.ProductXmlReader.Controllers
 {
@@ -16,7 +17,8 @@ namespace DotNetCore.MVC.ProductXmlReader.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Inventory inventory = _inventoryRepository.GetInventory();
+            return View(inventory);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

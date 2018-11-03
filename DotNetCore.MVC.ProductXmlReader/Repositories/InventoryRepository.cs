@@ -8,17 +8,12 @@ namespace DotNetCore.MVC.ProductXmlReader.Repositories
     {
         private readonly string InventoryXmlFilePath = @"Data/inventory.xml";
 
-        public InventoryRepository()
+        public Inventory GetInventory()
         {
-            XmlSerializer ser = new XmlSerializer(typeof(Inventory), new XmlRootAttribute("inventory"));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Inventory), new XmlRootAttribute("inventory"));
             string text = File.ReadAllText(InventoryXmlFilePath);
             StringReader stringReader = new StringReader(text);
-            Inventory objOutput = (Inventory)ser.Deserialize(stringReader);
+            return (Inventory)xmlSerializer.Deserialize(stringReader);
         }
-
-        //public Inventory Get()
-        //{
-            
-        //}
     }
 }
